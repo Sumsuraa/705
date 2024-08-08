@@ -1,0 +1,1310 @@
+Running on Device(CPU/CUDA):  cuda:0
+UNet(
+  (max_pool2d): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (down_convolution_1): Sequential(
+    (0): Conv2d(3, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (down_convolution_2): Sequential(
+    (0): Conv2d(64, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (down_convolution_3): Sequential(
+    (0): Conv2d(128, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (down_convolution_4): Sequential(
+    (0): Conv2d(256, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (down_convolution_5): Sequential(
+    (0): Conv2d(512, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(1024, 1024, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(1024, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (up_transpose_1): ConvTranspose2d(1024, 512, kernel_size=(2, 2), stride=(2, 2))
+  (up_convolution_1): Sequential(
+    (0): Conv2d(1024, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (up_transpose_2): ConvTranspose2d(512, 256, kernel_size=(2, 2), stride=(2, 2))
+  (up_convolution_2): Sequential(
+    (0): Conv2d(512, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (up_transpose_3): ConvTranspose2d(256, 128, kernel_size=(2, 2), stride=(2, 2))
+  (up_convolution_3): Sequential(
+    (0): Conv2d(256, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (up_transpose_4): ConvTranspose2d(128, 64, kernel_size=(2, 2), stride=(2, 2))
+  (up_convolution_4): Sequential(
+    (0): Conv2d(128, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (2): ReLU(inplace=True)
+    (3): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+    (4): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (5): ReLU(inplace=True)
+  )
+  (out): Conv2d(64, 2, kernel_size=(1, 1), stride=(1, 1))
+)
+31,043,586 total parameters.
+31,043,586 training parameters.
+EPOCH: 1
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:05<00:00,  1.72s/it]
+|                    | 37/? [01:05<00:00,  1.78s/it]
+ 67%|█████████████▎      | 4/6 [00:01<00:00,  2.67it/s]
+Best validation loss: 0.4337375958760579
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.64it/s]
+Best validation IoU: 0.37030394899678637
+Saving best model for epoch: 1
+Train Epoch Loss: 0.4690, Train Epoch PixAcc: 0.8026, Train Epoch mIOU: 0.427016
+Valid Epoch Loss: 0.4337, Valid Epoch PixAcc: 0.7168, Valid Epoch mIOU: 0.370304
+--------------------------------------------------
+EPOCH: 2
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:05<00:00,  1.71s/it]
+|                    | 37/? [01:05<00:00,  1.77s/it]
+ 83%|████████████████▋   | 5/6 [00:01<00:00,  2.78it/s]
+Best validation loss: 0.4259610076745351
+Saving best model for epoch: 2
+Best validation IoU: 0.40976324761543426
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.74it/s]
+Train Epoch Loss: 0.4142, Train Epoch PixAcc: 0.8082, Train Epoch mIOU: 0.456892
+Valid Epoch Loss: 0.4260, Valid Epoch PixAcc: 0.6914, Valid Epoch mIOU: 0.409763
+--------------------------------------------------
+EPOCH: 3
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:05<00:01,  1.99s/it]
+|                    | 37/? [01:07<00:00,  1.82s/it]
+ 17%|███▎                | 1/6 [00:00<00:01,  2.71it/s]
+Best validation loss: 0.3617750530441602
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.77it/s]
+Best validation IoU: 0.45481424122218156
+Saving best model for epoch: 3
+Train Epoch Loss: 0.4047, Train Epoch PixAcc: 0.8109, Train Epoch mIOU: 0.471571
+Valid Epoch Loss: 0.3618, Valid Epoch PixAcc: 0.7289, Valid Epoch mIOU: 0.454814
+--------------------------------------------------
+EPOCH: 4
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:06<00:01,  1.91s/it]
+|                    | 37/? [01:09<00:00,  1.87s/it]
+ 50%|██████████          | 3/6 [00:01<00:01,  2.68it/s]
+Train Epoch Loss: 0.3904, Train Epoch PixAcc: 0.8146, Train Epoch mIOU: 0.488340
+Valid Epoch Loss: 0.3867, Valid Epoch PixAcc: 0.7131, Valid Epoch mIOU: 0.452567
+--------------------------------------------------
+EPOCH: 5
+100%|████████████████████| 6/6 [00:02<00:00,  2.64it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:09<00:02,  2.04s/it]
+|                    | 37/? [01:12<00:00,  1.95s/it]
+ 33%|██████▋             | 2/6 [00:00<00:01,  2.70it/s]
+Best validation loss: 0.338038831949234
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.71it/s]
+Best validation IoU: 0.46616454319901546
+Saving best model for epoch: 5
+Train Epoch Loss: 0.3911, Train Epoch PixAcc: 0.8156, Train Epoch mIOU: 0.493844
+Valid Epoch Loss: 0.3380, Valid Epoch PixAcc: 0.7326, Valid Epoch mIOU: 0.466165
+--------------------------------------------------
+EPOCH: 6
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:07<00:00,  1.91s/it]
+|                    | 37/? [01:07<00:00,  1.83s/it]
+ 67%|█████████████▎      | 4/6 [00:01<00:00,  2.84it/s]
+Train Epoch Loss: 0.3875, Train Epoch PixAcc: 0.8151, Train Epoch mIOU: 0.490674
+Valid Epoch Loss: 0.4101, Valid Epoch PixAcc: 0.7081, Valid Epoch mIOU: 0.457357
+--------------------------------------------------
+EPOCH: 7
+100%|████████████████████| 6/6 [00:02<00:00,  2.82it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:02<00:01,  1.91s/it]
+|                    | 37/? [01:05<00:00,  1.76s/it]
+ 17%|███▎                | 1/6 [00:00<00:01,  2.73it/s]
+Best validation IoU: 0.47133633903799615
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.77it/s]
+Train Epoch Loss: 0.3822, Train Epoch PixAcc: 0.8178, Train Epoch mIOU: 0.502871
+Valid Epoch Loss: 0.4065, Valid Epoch PixAcc: 0.7073, Valid Epoch mIOU: 0.471336
+--------------------------------------------------
+EPOCH: 8
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:04<00:01,  1.89s/it]
+|                    | 37/? [01:07<00:00,  1.81s/it]
+ 17%|███▎                | 1/6 [00:00<00:01,  2.78it/s]
+Train Epoch Loss: 0.3767, Train Epoch PixAcc: 0.8187, Train Epoch mIOU: 0.510827
+Valid Epoch Loss: 0.3818, Valid Epoch PixAcc: 0.7114, Valid Epoch mIOU: 0.470467
+--------------------------------------------------
+EPOCH: 9
+100%|████████████████████| 6/6 [00:02<00:00,  2.77it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:06<00:00,  1.79s/it]
+  0%|                    | 0/6 [00:00<?, ?it/s]
+
+ 83%|████████████████▋   | 5/6 [00:01<00:00,  2.77it/s]
+Best validation loss: 0.3263349508245786
+Saving best model for epoch: 9
+Best validation IoU: 0.493580911718515
+Saving best model for epoch: 9
+Train Epoch Loss: 0.3768, Train Epoch PixAcc: 0.8199, Train Epoch mIOU: 0.513397
+Valid Epoch Loss: 0.3263, Valid Epoch PixAcc: 0.7375, Valid Epoch mIOU: 0.493581
+--------------------------------------------------
+EPOCH: 10
+100%|████████████████████| 6/6 [00:02<00:00,  2.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:01<00:01,  1.66s/it]
+|                    | 37/? [01:04<00:00,  1.73s/it]
+100%|████████████████████| 6/6 [00:02<00:00,  2.73it/s]
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3754, Train Epoch PixAcc: 0.8181, Train Epoch mIOU: 0.510892
+Valid Epoch Loss: 0.3834, Valid Epoch PixAcc: 0.7183, Valid Epoch mIOU: 0.471171
+--------------------------------------------------
+EPOCH: 11
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:04<00:01,  1.79s/it]
+|                    | 37/? [01:07<00:00,  1.83s/it]
+ 17%|███▎                | 1/6 [00:00<00:01,  2.69it/s]
+Train Epoch Loss: 0.3767, Train Epoch PixAcc: 0.8198, Train Epoch mIOU: 0.512759
+Valid Epoch Loss: 0.3640, Valid Epoch PixAcc: 0.7274, Valid Epoch mIOU: 0.479227
+--------------------------------------------------
+EPOCH: 12
+100%|████████████████████| 6/6 [00:02<00:00,  2.56it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:09<00:00,  1.89s/it]
+ 17%|███▎                | 1/6 [00:00<00:01,  2.84it/s]
+100%|████████████████████| 6/6 [00:02<00:00,  2.74it/s]
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3759, Train Epoch PixAcc: 0.8185, Train Epoch mIOU: 0.514075
+Valid Epoch Loss: 0.3877, Valid Epoch PixAcc: 0.7121, Valid Epoch mIOU: 0.486625
+--------------------------------------------------
+EPOCH: 13
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:03<00:01,  1.93s/it]
+|                    | 37/? [01:05<00:00,  1.76s/it]
+100%|████████████████████| 6/6 [00:02<00:00,  2.48it/s]
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3708, Train Epoch PixAcc: 0.8196, Train Epoch mIOU: 0.518355
+Valid Epoch Loss: 0.3975, Valid Epoch PixAcc: 0.6985, Valid Epoch mIOU: 0.460131
+--------------------------------------------------
+EPOCH: 14
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:06<00:01,  1.84s/it]
+|                    | 37/? [01:09<00:00,  1.89s/it]
+100%|████████████████████| 6/6 [00:02<00:00,  2.71it/s]
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3715, Train Epoch PixAcc: 0.8176, Train Epoch mIOU: 0.515797
+Valid Epoch Loss: 0.3342, Valid Epoch PixAcc: 0.7342, Valid Epoch mIOU: 0.471164
+--------------------------------------------------
+EPOCH: 15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:10<00:00,  1.74s/it]
+|                    | 37/? [01:11<00:00,  1.92s/it]
+ 67%|█████████████▎      | 4/6 [00:01<00:00,  2.48it/s]
+Train Epoch Loss: 0.3638, Train Epoch PixAcc: 0.8241, Train Epoch mIOU: 0.525556
+Valid Epoch Loss: 0.4239, Valid Epoch PixAcc: 0.6650, Valid Epoch mIOU: 0.449126
+--------------------------------------------------
+EPOCH: 16
+100%|████████████████████| 6/6 [00:02<00:00,  2.58it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:09<00:00,  1.87s/it]
+  0%|                    | 0/6 [00:00<?, ?it/s]
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.83it/s]
+Best validation IoU: 0.5237284940883433
+Saving best model for epoch: 16
+Train Epoch Loss: 0.3654, Train Epoch PixAcc: 0.8225, Train Epoch mIOU: 0.526169
+Valid Epoch Loss: 0.3363, Valid Epoch PixAcc: 0.7396, Valid Epoch mIOU: 0.523728
+--------------------------------------------------
+EPOCH: 17
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:02<00:00,  1.57s/it]
+|                    | 37/? [01:03<00:00,  1.73s/it]
+ 67%|█████████████▎      | 4/6 [00:01<00:00,  2.92it/s]
+Train Epoch Loss: 0.3677, Train Epoch PixAcc: 0.8199, Train Epoch mIOU: 0.521777
+Valid Epoch Loss: 0.6843, Valid Epoch PixAcc: 0.5055, Valid Epoch mIOU: 0.310541
+--------------------------------------------------
+EPOCH: 18
+100%|████████████████████| 6/6 [00:02<00:00,  2.94it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 92%|██████████████████▎ | 33/36 [01:02<00:05,  1.80s/it]
+Validating
+Train Epoch Loss: 0.3641, Train Epoch PixAcc: 0.8220, Train Epoch mIOU: 0.524240
+Valid Epoch Loss: 0.3863, Valid Epoch PixAcc: 0.7089, Valid Epoch mIOU: 0.491396
+--------------------------------------------------
+EPOCH: 19
+|                    | 37/? [01:08<00:00,  1.86s/it]
+100%|████████████████████| 6/6 [00:02<00:00,  2.69it/s]
+ 56%|███████████         | 20/36 [00:39<00:31,  1.99s/it]                                                              [34m[1mwandb[39m[22m: Network error resolved after 0:00:46.042567, resuming normal operation.
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:06<00:01,  1.68s/it]
+|                    | 37/? [01:09<00:00,  1.88s/it]
+ 33%|██████▋             | 2/6 [00:00<00:01,  2.61it/s]
+Train Epoch Loss: 0.3567, Train Epoch PixAcc: 0.8250, Train Epoch mIOU: 0.535713
+Valid Epoch Loss: 0.4043, Valid Epoch PixAcc: 0.6877, Valid Epoch mIOU: 0.477030
+--------------------------------------------------
+EPOCH: 20
+100%|████████████████████| 6/6 [00:02<00:00,  2.56it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:10<00:00,  1.88s/it]
+|                    | 37/? [01:11<00:00,  1.93s/it]
+ 17%|███▎                | 1/6 [00:00<00:01,  2.69it/s]
+Train Epoch Loss: 0.3545, Train Epoch PixAcc: 0.8255, Train Epoch mIOU: 0.538694
+Valid Epoch Loss: 0.4028, Valid Epoch PixAcc: 0.6815, Valid Epoch mIOU: 0.453144
+--------------------------------------------------
+EPOCH: 21
+100%|████████████████████| 6/6 [00:02<00:00,  2.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:10<00:00,  1.91s/it]
+ 17%|███▎                | 1/6 [00:00<00:01,  2.77it/s]
+100%|████████████████████| 6/6 [00:02<00:00,  2.67it/s]
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3514, Train Epoch PixAcc: 0.8261, Train Epoch mIOU: 0.542140
+Valid Epoch Loss: 0.3349, Valid Epoch PixAcc: 0.7341, Valid Epoch mIOU: 0.519679
+--------------------------------------------------
+EPOCH: 22
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 97%|███████████████████▍| 35/36 [01:06<00:01,  1.82s/it]
+|                    | 37/? [01:09<00:00,  1.87s/it]
+100%|████████████████████| 6/6 [00:02<00:00,  2.74it/s]
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3467, Train Epoch PixAcc: 0.8279, Train Epoch mIOU: 0.549262
+Valid Epoch Loss: 0.4563, Valid Epoch PixAcc: 0.6364, Valid Epoch mIOU: 0.431708
+--------------------------------------------------
+EPOCH: 23
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:10<00:00,  2.02s/it]
+|                    | 37/? [01:11<00:00,  1.93s/it]
+ 67%|█████████████▎      | 4/6 [00:01<00:00,  2.73it/s]
+Train Epoch Loss: 0.3525, Train Epoch PixAcc: 0.8276, Train Epoch mIOU: 0.548561
+Valid Epoch Loss: 0.3971, Valid Epoch PixAcc: 0.6835, Valid Epoch mIOU: 0.472320
+--------------------------------------------------
+EPOCH: 24
+100%|████████████████████| 6/6 [00:02<00:00,  2.70it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:12<00:00,  1.97s/it]
+ 33%|██████▋             | 2/6 [00:00<00:01,  2.68it/s]
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.71it/s]
+Best validation loss: 0.32139308005571365
+Saving best model for epoch: 24
+Best validation IoU: 0.5518885924653983
+Saving best model for epoch: 24
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3412, Train Epoch PixAcc: 0.8314, Train Epoch mIOU: 0.557606
+Valid Epoch Loss: 0.3214, Valid Epoch PixAcc: 0.7381, Valid Epoch mIOU: 0.551889
+--------------------------------------------------
+EPOCH: 25
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:12<00:00,  1.95s/it]
+ 33%|██████▋             | 2/6 [00:00<00:01,  2.74it/s]
+100%|████████████████████| 6/6 [00:02<00:00,  2.74it/s]
+  0%|                    | 0/36 [00:00<?, ?it/s]
+Train Epoch Loss: 0.3398, Train Epoch PixAcc: 0.8278, Train Epoch mIOU: 0.552153
+Valid Epoch Loss: 0.3426, Valid Epoch PixAcc: 0.7261, Valid Epoch mIOU: 0.521976
+--------------------------------------------------
+EPOCH: 26
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:14<00:00,  1.93s/it]
+|                    | 37/? [01:15<00:00,  2.03s/it]
+ 67%|█████████████▎      | 4/6 [00:01<00:00,  2.69it/s]
+Train Epoch Loss: 0.3401, Train Epoch PixAcc: 0.8293, Train Epoch mIOU: 0.558816
+Valid Epoch Loss: 0.6937, Valid Epoch PixAcc: 0.5344, Valid Epoch mIOU: 0.337362
+--------------------------------------------------
+EPOCH: 27
+100%|████████████████████| 6/6 [00:02<00:00,  2.73it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:09<00:00,  1.79s/it]
+|                    | 37/? [01:10<00:00,  1.89s/it]
+ 50%|██████████          | 3/6 [00:01<00:01,  2.74it/s]
+Train Epoch Loss: 0.3358, Train Epoch PixAcc: 0.8303, Train Epoch mIOU: 0.563100
+Valid Epoch Loss: 0.3436, Valid Epoch PixAcc: 0.7311, Valid Epoch mIOU: 0.536826
+--------------------------------------------------
+EPOCH: 28
+100%|████████████████████| 6/6 [00:02<00:00,  2.71it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:11<00:00,  1.93s/it]
+  0%|                    | 0/6 [00:00<?, ?it/s]
+
+ 83%|████████████████▋   | 5/6 [00:01<00:00,  2.80it/s]
+Train Epoch Loss: 0.3263, Train Epoch PixAcc: 0.8363, Train Epoch mIOU: 0.579906
+Valid Epoch Loss: 0.3710, Valid Epoch PixAcc: 0.7040, Valid Epoch mIOU: 0.510752
+--------------------------------------------------
+EPOCH: 29
+100%|████████████████████| 6/6 [00:02<00:00,  2.75it/s]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+|                    | 37/? [01:04<00:00,  1.75s/it]
+ 50%|██████████          | 3/6 [00:00<00:00,  3.13it/s]
+
+100%|████████████████████| 6/6 [00:01<00:00,  3.11it/s]
+Best validation loss: 0.29255660126606625
+Saving best model for epoch: 29
+Best validation IoU: 0.5759978793970906
+Saving best model for epoch: 29
+Train Epoch Loss: 0.3180, Train Epoch PixAcc: 0.8399, Train Epoch mIOU: 0.590472
+Valid Epoch Loss: 0.2926, Valid Epoch PixAcc: 0.7511, Valid Epoch mIOU: 0.575998
+--------------------------------------------------
+EPOCH: 30
+Training
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+100%|████████████████████| 36/36 [01:05<00:00,  1.92s/it]
+|                    | 37/? [01:06<00:00,  1.79s/it]
+ 50%|██████████          | 3/6 [00:01<00:01,  2.72it/s]
+Best validation loss: 0.2736333633462588
+
+100%|████████████████████| 6/6 [00:02<00:00,  2.71it/s]
+Best validation IoU: 0.5761831940010211
+Saving best model for epoch: 30
+Train Epoch Loss: 0.3119, Train Epoch PixAcc: 0.8420, Train Epoch mIOU: 0.598423
+Valid Epoch Loss: 0.2736, Valid Epoch PixAcc: 0.7559, Valid Epoch mIOU: 0.576183
+--------------------------------------------------
+TRAINING COMPLETE
